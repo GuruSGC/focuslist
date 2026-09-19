@@ -215,9 +215,9 @@ export function buildBristles(journey: Journey, options: { count: number; seed: 
     const b = core ? 1 : 0.94 + random() * 0.06
     const width = round1(spacing * 1.9)
     // Off-centre body bristles break once (kasure): thin dry lines where the brush ran out of ink.
-    const gapped = core && !center && random() < 0.6
-    const gapStart = 0.12 + random() * 0.7
-    const gapEnd = Math.min(0.97, gapStart + 0.03 + random() * 0.07)
+    const gapped = core && !center && random() < 0.8
+    const gapStart = 0.1 + random() * 0.7
+    const gapEnd = Math.min(0.97, gapStart + 0.05 + random() * 0.1)
     const ranges: [number, number][] = gapped
       ? [
           [a, gapStart],
@@ -240,14 +240,17 @@ export function buildBristles(journey: Journey, options: { count: number; seed: 
     }
   }
 
-  const streaks = Math.max(4, Math.round(count / 3))
+  // Edge streaks stay off the turns: on the inside of a corner they would cross and read as a stray outline.
+  const turns = journey.ends.slice(0, 2).map((end) => [end - 0.03, end + 0.08] as const)
+  const streaks = Math.max(6, Math.round(count / 2))
   for (let k = 0; k < streaks; k += 1) {
     const side = k % 2 === 0 ? -1 : 1
-    const offset = side * (1.02 + random() * 0.28)
-    const start = random() * 0.5
-    const span = 0.25 + random() * 0.5
+    const offset = side * (1.02 + random() * 0.18)
+    const start = random() * 0.6
+    const span = 0.15 + random() * 0.3
     const a = start
     const b = Math.min(1, start + span)
+    if (turns.some(([from, to]) => a < to && b > from)) continue
     const path = pathFor(journey, a, b, offset, jitter(spacing * 0.5))
     if (path.length === 0) continue
     bristles.push({

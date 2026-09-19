@@ -215,13 +215,13 @@
   .backdrop-art {
     position: absolute;
     inset: 0;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 38%, #000 74%);
-    mask-image: linear-gradient(to bottom, transparent 0, transparent 38%, #000 74%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 44%, #000 82%);
+    mask-image: linear-gradient(to bottom, transparent 0, transparent 44%, #000 82%);
   }
   @media (min-width: 1024px) {
     .backdrop-art {
-      -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 46%, #000 70%);
-      mask-image: linear-gradient(to right, transparent 0, transparent 46%, #000 70%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 42%, rgb(0 0 0 / 0.5) 58%, #000 78%);
+      mask-image: linear-gradient(to right, transparent 0, transparent 42%, rgb(0 0 0 / 0.5) 58%, #000 78%);
     }
   }
 

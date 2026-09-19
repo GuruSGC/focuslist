@@ -15,7 +15,7 @@ interface TaskListProps {
 export function TaskList({ tasks, totalCount, onToggle, onEdit, onDelete, onClearFilters }: TaskListProps) {
   return (
     <section aria-label="Task list" className="grid content-start gap-2">
-      <p role="status" className="text-sm text-sumi-soft" data-testid="results-count">
+      <p role="status" className="w-fit bg-paper/85 pr-2 text-sm text-sumi-soft" data-testid="results-count">
         {totalCount === 0 ? 'No tasks yet' : `Showing ${tasks.length} of ${totalCount} ${totalCount === 1 ? 'task' : 'tasks'}`}
       </p>
       {totalCount === 0 ? (
