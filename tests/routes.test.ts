@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { ROUTES, parseRoute, routeIndex, routeToHash } from '../src/lib/routes'
+import { ROUTES, parseRoute, routeToHash } from '../src/lib/routes'
 
 describe('routes', () => {
   it('parses known hash routes', () => {
@@ -18,7 +18,4 @@ describe('routes', () => {
     for (const route of ROUTES) expect(parseRoute(routeToHash(route))).toBe(route)
   })
 
-  it('orders routes for the brush stroke journey', () => {
-    expect(ROUTES.map(routeIndex)).toEqual([0, 1, 2])
-  })
 })

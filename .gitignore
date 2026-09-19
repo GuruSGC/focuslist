@@ -8,3 +8,5 @@ GATES.md
 lighthouse-report*.json
 
 .vercel
+.art-cache
+.motion-lab

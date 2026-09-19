@@ -48,10 +48,11 @@ Undecided: none blocking.
 ## Brand Commitments
 
 - Name: FocusList.
-- Binding theme (user, explicit, revised): Japanese, drawn from famous Japanese paintings of the ukiyo-e and samurai era (for example the great wave and warrior imagery); a suitable Japanese typeface. The painting is the static background, with papyrus-coloured empty space left for the app. Not a design that is painted in.
-- Binding motion idea (user, explicit, revised): a thick black Japanese brush stroke starts downward and keeps going downward as you scroll, with other details on its sides, then changes direction and keeps going. Because this is a to-do app, the app is practical first: mostly non-scrolling pages that load in, navigated by clicking between pages and components; the stroke advances and turns with that navigation as well as with scroll.
-- Priority: maximise the automated evaluation score first (features, accessibility, responsiveness, performance, code quality, documentation); the theme serves that, never obstructs it.
-- Artwork: original vector artwork only (user's choice). No downloaded prints.
+- Binding theme (user, explicit, revision 3): Japanese, drawn from famous Japanese paintings of the ukiyo-e and samurai era; a suitable Japanese typeface. The backgrounds are REAL public-domain prints from the Met Open Access collection, one per page, not hand-drawn vector imitations (the user judged the vector painting sloppy). Pages stay practical and mostly non-scrolling, navigated by clicking.
+- Removed (user, explicit, revision 3): the thick black brush stroke idea, entirely.
+- Motion (user, explicit, revision 3): every user action gets a visible, smooth, tasteful animation with one consistent personality. The user said "slow" only to stress that most clicks had no animation at all. Chosen speed tier: snappy, under 300 ms, with state changes staying instant and input never blocked. Motion must be checkable in a real browser.
+- Priority: maximise the automated evaluation score first (features, accessibility, responsiveness, performance, code quality, documentation); the theme and motion serve that, never obstruct it.
+- Artwork: real Met public-domain prints (Hokusai, Kuniyoshi, Hiroshige), optimised locally, credited in the Guide. Downloads were approved by the user for these three prints only.
 - Copy voice: plain, literal English labels and buttons (Total Tasks, High, Completed, and so on). Japanese characters appear only as decorative accents.
 
 ## Evidence on Hand

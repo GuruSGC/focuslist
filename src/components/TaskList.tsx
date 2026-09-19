@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+import { useFlip } from '../hooks/useFlip'
 import type { SubmitResult } from '../hooks/useTasks'
 import type { Priority, Task } from '../types'
 import { EmptyState } from './EmptyState'
@@ -13,6 +15,9 @@ interface TaskListProps {
 }
 
 export function TaskList({ tasks, totalCount, onToggle, onEdit, onDelete, onClearFilters }: TaskListProps) {
+  const list = useRef<HTMLUListElement>(null)
+  useFlip(list)
+
   return (
     <section aria-label="Task list" className="grid content-start gap-2">
       <p role="status" className="w-fit bg-paper/85 pr-2 text-sm text-sumi-soft" data-testid="results-count">
@@ -23,7 +28,7 @@ export function TaskList({ tasks, totalCount, onToggle, onEdit, onDelete, onClea
       ) : tasks.length === 0 ? (
         <EmptyState kind="no-results" onClearFilters={onClearFilters} />
       ) : (
-        <ul className="grid gap-2" data-testid="task-list">
+        <ul ref={list} className="grid gap-2" data-testid="task-list">
           {tasks.map((task) => (
             <TaskItem key={task.id} task={task} onToggle={onToggle} onEdit={onEdit} onDelete={onDelete} />
           ))}

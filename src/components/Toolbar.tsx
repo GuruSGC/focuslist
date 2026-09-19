@@ -1,11 +1,13 @@
 import type { RefObject } from 'react'
+import { pauseFlip } from '../lib/motion'
 import { PRIORITY_META } from '../lib/priority'
 import { PRIORITIES } from '../lib/tasks'
 import type { Filters, PriorityFilter, StatusFilter } from '../types'
 
 interface ToolbarProps {
   filters: Filters
-  onChange: (filters: Filters) => void
+  /** `typing` is true for search keystrokes, which should update the list at once with no exit animation. */
+  onChange: (filters: Filters, options?: { typing: boolean }) => void
   searchRef: RefObject<HTMLInputElement | null>
 }
 
@@ -35,7 +37,11 @@ export function Toolbar({ filters, onChange, searchRef }: ToolbarProps) {
           autoComplete="off"
           placeholder="Search by title…"
           value={filters.query}
-          onChange={(event) => onChange({ ...filters, query: event.target.value })}
+          onChange={(event) => {
+            // Typing is high-frequency: results update at once, without reflow animation.
+            pauseFlip(300)
+            onChange({ ...filters, query: event.target.value }, { typing: true })
+          }}
         />
       </div>
 

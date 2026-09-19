@@ -54,7 +54,7 @@ const suites = {
       check(info.visible, `"${info.name}" has no visible focus ring`)
       seen.add(info.name)
     }
-    for (const expected of ['Skip to content', 'Tasks', 'Overview', 'Guide', 'new-task', 'Add task', 'search', 'All', 'Active', 'Completed', 'priority-filter']) {
+    for (const expected of ['Skip to content', 'Tasks', 'Overview', 'Guide', 'new-task', 'Add Task', 'search', 'All', 'Active', 'Completed', 'priority-filter']) {
       check([...seen].some((name) => name.includes(expected)), `Tab order should reach "${expected}"`)
     }
     check([...seen].some((name) => name.startsWith('Edit ')) && [...seen].some((name) => name.startsWith('Delete ')), 'Tab order should reach Edit and Delete')

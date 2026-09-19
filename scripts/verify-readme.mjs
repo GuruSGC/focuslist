@@ -11,7 +11,7 @@ if (!existsSync(path)) {
 const text = readFileSync(path, 'utf8')
 const problems = []
 
-for (const section of ['Overview', 'Features', 'Tech stack', 'Setup', 'Architecture', 'Accessibility', 'Performance', 'Deployment', 'Screenshots']) {
+for (const section of ['Overview', 'Features', 'Tech stack', 'Setup', 'Architecture', 'Motion', 'Accessibility', 'Performance', 'Deployment', 'Screenshots']) {
   if (!new RegExp(`^#{1,3}\\s+.*${section}`, 'im').test(text)) problems.push(`missing a "${section}" heading`)
 }
 const live = text.match(/https:\/\/[^\s)]+\.(vercel\.app|netlify\.app|pages\.dev|github\.io)[^\s)]*/i)

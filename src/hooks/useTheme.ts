@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { fadeThemeSwitch } from '../lib/motion'
 import { saveTheme, type Theme } from '../lib/storage'
 
 function currentTheme(): Theme {
@@ -11,6 +12,7 @@ export function useTheme(): { theme: Theme; toggle: () => void } {
 
   const toggle = useCallback(() => {
     const next: Theme = currentTheme() === 'dark' ? 'light' : 'dark'
+    fadeThemeSwitch()
     document.documentElement.dataset.theme = next
     saveTheme(window.localStorage, next)
     setTheme(next)

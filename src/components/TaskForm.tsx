@@ -1,6 +1,7 @@
 import { useState, type FormEvent, type RefObject } from 'react'
 import { Plus } from '@phosphor-icons/react'
 import type { SubmitResult } from '../hooks/useTasks'
+import { shake } from '../lib/motion'
 import type { Priority } from '../types'
 import { PriorityField } from './PriorityField'
 
@@ -22,6 +23,8 @@ export function TaskForm({ onAdd, inputRef }: TaskFormProps) {
       setError(null)
     } else {
       setError(result.error)
+      // Shake the whole input-and-button row, so the movement is easy to see.
+      if (inputRef.current) shake(inputRef.current.parentElement ?? inputRef.current)
     }
     inputRef.current?.focus()
   }

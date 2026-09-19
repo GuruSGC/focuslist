@@ -195,7 +195,7 @@ const suites = {
     check(pending.checked === false && done.checked === true, 'seed data should have one pending and one completed task')
     check(pending.background !== done.background, 'completed rows should have a different background')
     check(pending.titleColor !== done.titleColor, 'completed titles should have a different colour')
-    check(pending.strike !== done.strike, 'completed titles should carry a brush strike-through')
+    check(pending.strike !== done.strike, 'completed titles should carry a drawn strike-through')
     check(pending.stamp !== done.stamp, 'completed rows should show a filled stamp')
   },
 
@@ -207,6 +207,7 @@ const suites = {
     const lightBackground = await background()
     await page.getByTestId('theme-toggle').click()
     check((await theme()) === 'dark', 'toggle should switch to dark')
+    await page.waitForTimeout(400) // colours cross-fade, so read them once the fade has finished
     check((await background()) !== lightBackground, 'dark theme should change the background')
     await page.reload()
     await page.waitForSelector('#page-title')

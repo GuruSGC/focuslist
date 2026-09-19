@@ -17,7 +17,10 @@ export function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       title={`Switch to ${next} theme`}
       data-testid="theme-toggle"
     >
-      {theme === 'dark' ? <Sun size={22} aria-hidden="true" /> : <Moon size={22} aria-hidden="true" />}
+      {/* Keyed so the new icon mounts and turns in, instead of snapping. */}
+      <span key={theme} className="theme-icon grid place-items-center">
+        {theme === 'dark' ? <Sun size={22} aria-hidden="true" /> : <Moon size={22} aria-hidden="true" />}
+      </span>
     </button>
   )
 }

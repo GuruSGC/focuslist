@@ -90,7 +90,7 @@ export const sampleTasks = (count = 4) => {
     ['Water the bonsai', 'low', true],
     ['Book train tickets to Kyoto', 'medium', false],
     ['Reply to Hiroshi about the lantern festival', 'high', true],
-    ['Sharpen the calligraphy brushes', 'low', false],
+    ['Grind fresh ink for the week', 'low', false],
     ['Plan Sunday tea gathering', 'medium', false],
     ['Renew library card', 'low', false],
     ['Write the report summary', 'medium', true],
@@ -118,7 +118,7 @@ export async function addTask(page, title, priority = 'medium') {
 export const rows = (page) => page.locator('[data-testid="task-item"]')
 export const stat = async (page, key) => Number(await page.locator(`[data-testid="stat-${key}-value"]`).first().innerText())
 
-/** Waits for the page-load transition and the brush stroke tween to finish. */
+/** Waits for the page-load and painting transitions to finish. */
 export const settle = (page) => page.waitForTimeout(1000)
 
 export async function run(name, marker, fn) {

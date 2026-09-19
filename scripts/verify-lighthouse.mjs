@@ -35,6 +35,9 @@ try {
     .filter(([key, minimum]) => scores[key] < minimum)
     .map(([key, minimum]) => `${key} ${Math.round(scores[key] * 100)} < ${minimum * 100}`)
   if (cls > MAX_CLS) misses.push(`CLS ${cls.toFixed(3)} > ${MAX_CLS}`)
+  // Animations must stay on the compositor. null means none ran, which also passes.
+  const compositor = audits['non-composited-animations']
+  if (compositor && compositor.score !== null && compositor.score < 1) misses.push('non-composited animations audit failed')
   if (misses.length) failure = `Below target: ${misses.join('; ')}`
 } finally {
   await Promise.resolve(chrome.kill()).catch(() => undefined)

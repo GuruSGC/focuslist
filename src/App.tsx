@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { Backdrop } from './components/Backdrop'
-import { BrushJourney } from './components/BrushJourney'
 import { Header } from './components/Header'
+import { PaintingBackdrop } from './components/PaintingBackdrop'
 import { UndoToast } from './components/UndoToast'
 import { useRoute } from './hooks/useRoute'
 import { useTasks } from './hooks/useTasks'
@@ -60,8 +59,7 @@ export default function App() {
 
   return (
     <>
-      <Backdrop />
-      <BrushJourney route={route} />
+      <PaintingBackdrop route={route} />
       <div className="shell">
         <a
           href="#main"
@@ -73,15 +71,17 @@ export default function App() {
         >
           Skip to content
         </a>
-        <Header route={route} theme={theme} onToggleTheme={toggle} />
-        <main id="main" className="w-full max-w-[46rem] flex-1 pb-6" data-route={route}>
-          {route === 'tasks' && (
-            <TasksPage api={api} filters={filters} onFiltersChange={setFilters} newTaskRef={newTaskRef} searchRef={searchRef} />
-          )}
-          {route === 'overview' && <OverviewPage tasks={api.tasks} />}
-          {route === 'guide' && <GuidePage />}
-        </main>
-        <UndoToast deleted={api.deleted} onUndo={api.undoRemove} />
+        <div className="panel">
+          <Header route={route} theme={theme} onToggleTheme={toggle} />
+          <main id="main" className="w-full flex-1 pb-6" data-route={route}>
+            {route === 'tasks' && (
+              <TasksPage api={api} filters={filters} onFiltersChange={setFilters} newTaskRef={newTaskRef} searchRef={searchRef} />
+            )}
+            {route === 'overview' && <OverviewPage tasks={api.tasks} />}
+            {route === 'guide' && <GuidePage />}
+          </main>
+        </div>
+        <UndoToast deleted={api.deleted} leaving={api.undoLeaving} onUndo={api.undoRemove} />
       </div>
     </>
   )

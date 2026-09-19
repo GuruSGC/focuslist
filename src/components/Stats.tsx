@@ -36,7 +36,10 @@ export function Stats({ stats, size = 'compact', className = '' }: StatsProps) {
               className={`font-display leading-none font-bold tabular-nums ${large ? 'text-4xl' : 'text-2xl'}`}
               data-testid={`stat-${item.key}-value`}
             >
-              {stats[item.key]}
+              {/* Keyed by value so a changed figure rolls in instead of swapping silently. */}
+              <span key={stats[item.key]} className="roll">
+                {stats[item.key]}
+              </span>
             </dd>
           </div>
         ))}

@@ -6,7 +6,7 @@ interface EmptyStateProps {
 /** Ink circle (enso) with a short prompt. Shown when there are no tasks or no matches. */
 export function EmptyState({ kind, onClearFilters }: EmptyStateProps) {
   return (
-    <div className="plate flex items-center gap-4 p-3 sm:p-5" data-testid={kind === 'empty' ? 'empty-state' : 'no-results'}>
+    <div className="empty plate flex items-center gap-4 p-3 sm:p-5" data-testid={kind === 'empty' ? 'empty-state' : 'no-results'}>
       <svg viewBox="0 0 64 64" className="size-12 shrink-0 text-sumi sm:size-16" aria-hidden="true" focusable="false">
         <path
           d="M32 8C18 8 8 19 8 33c0 13 10 23 24 23s24-10 24-23c0-7-3-13-8-17"

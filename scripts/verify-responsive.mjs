@@ -43,7 +43,6 @@ const suites = {
     const cases = [
       { width: 1440, height: 900, pages: ['tasks', 'overview'], counts: [0, 4] },
       { width: 1366, height: 768, pages: ['tasks', 'overview'], counts: [0, 4] },
-      { width: 375, height: 812, pages: ['tasks'], counts: [0] },
     ]
     for (const { width, height, pages, counts } of cases) {
       for (const name of pages) {

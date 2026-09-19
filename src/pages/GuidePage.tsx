@@ -1,3 +1,8 @@
+import { PAINTINGS } from '../data/paintings'
+
+/** The Met titles are long; show the part before the first comma or parenthesis. */
+const shortTitle = (title: string) => title.split(/[,(]/)[0]?.trim() || title
+
 const SHORTCUTS = [
   { keys: ['N'], action: 'Jump to the new task field' },
   { keys: ['/'], action: 'Jump to search' },
@@ -66,8 +71,24 @@ export function GuidePage() {
             Credits
           </h2>
           <p className="text-sumi-soft">
-            Original vector artwork inspired by ukiyo-e prints. Set in Shippori Mincho B1, Zen Kaku Gothic New and Yuji Syuku, all under the SIL
-            Open Font License.
+            The page backgrounds are public-domain prints from The Metropolitan Museum of Art Open Access collection:
+          </p>
+          <ul className="mt-1 text-sm" data-testid="credits">
+            {Object.values(PAINTINGS).map((painting) => (
+              <li key={painting.id}>
+                <a
+                  href={painting.objectUrl}
+                  className="flex min-h-11 items-center text-sumi underline underline-offset-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {shortTitle(painting.title)}, {painting.artist}, {painting.date}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-sm text-sumi-soft">
+            Set in Shippori Mincho B1, Zen Kaku Gothic New and Yuji Syuku, all under the SIL Open Font License.
           </p>
         </section>
       </div>

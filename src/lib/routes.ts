@@ -17,7 +17,3 @@ export function routeToHash(route: Route): string {
   return `#/${route}`
 }
 
-/** Position in the brush stroke journey: Tasks 0, Overview 1, Guide 2. */
-export function routeIndex(route: Route): number {
-  return ROUTES.indexOf(route)
-}
