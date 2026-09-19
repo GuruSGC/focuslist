@@ -1,0 +1,8 @@
+node_modules
+dist
+.review
+GATES.md
+*.log
+.DS_Store
+.vercel
+lighthouse-report*.json

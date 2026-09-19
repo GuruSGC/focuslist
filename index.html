@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusList: a to-do list painted in ink</title>
+    <meta
+      name="description"
+      content="FocusList is a fast, frontend-only to-do app with priorities, search, filters and live statistics, set against a Japanese ukiyo-e painting."
+    />
+    <meta name="theme-color" content="#eee9dc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12161f" media="(prefers-color-scheme: dark)" />
+    <meta property="og:title" content="FocusList" />
+    <meta property="og:description" content="A to-do list painted in ink. Tasks, priorities, search, filters and statistics that stay in your browser." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      try {
+        var saved = localStorage.getItem('focuslist:theme');
+        var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+  </head>
+  <body>
+    <!--
+      THESIS: a to-do list that is a Japanese painting with one thick sumi stroke walking through it; one papyrus column, no card-grid dashboard.
+      OWN-WORLD: papyrus ground, Prussian-indigo wave, vermilion sun and seals, black brush; Shippori Mincho display, Zen Kaku Gothic UI, Yuji Syuku kanji accents; 2px corners.
+      STORY: the visitor sees their tasks at once, acts by keyboard or touch, and feels the stroke advance and turn as they move between pages.
+      FIRST VIEWPORT: wordmark and nav top, Tasks page as one left column (stats beside the title, form, filters, list), painting with sun, Fuji, wave and pine filling the right, stroke down the left lane.
+      FORM: ukiyo-e print with brush calligraphy journey, seed 11.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
