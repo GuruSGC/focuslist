@@ -53,6 +53,17 @@ typography:
     fontSize: "0.8125rem"
     fontWeight: 500
     lineHeight: 1.55
+  small:
+    fontFamily: "'Zen Kaku Gothic New', 'Yu Gothic', 'Hiragino Sans', 'Noto Sans JP', system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 500
+    lineHeight: 1.55
+  wordmark:
+    fontFamily: "'Shippori Mincho B1', 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif"
+    fontSize: "1.625rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.01em"
   seal-glyph:
     fontFamily: "'Yuji Syuku', 'Shippori Mincho B1', 'Yu Mincho', serif"
     fontSize: "0.9375rem"
@@ -177,6 +188,7 @@ A restrained print palette: warm paper and near-black ink carry the whole interf
 - **Title** (500, 1.0625rem, 1.375): task titles.
 - **Body** (400, 1rem, 1.55): default text; wraps anywhere for long titles.
 - **Label** (500, 0.8125rem to 0.9375rem): field labels, stat labels, segmented options, chips (chips at 700). Sentence case, no tracking, no uppercase.
+- **Small** (500 to 700, 0.875rem, 1.55): inline error messages, captions, secondary rows and key caps.
 - **Wordmark** (700, 1.625rem, -0.01em, line-height 1).
 
 ### Named Rules
