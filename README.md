@@ -2,7 +2,9 @@
 
 A frontend-only to-do app set against a Japanese ukiyo-e painting. Tasks, priorities, search, filters and live statistics, with one thick black sumi brush stroke that runs through the app: it starts downward, keeps going as you scroll, and turns to a new direction as you move between pages.
 
-Live demo: DEPLOY_URL_PENDING
+Live demo: https://webrushhack.vercel.app
+
+Source: https://github.com/GuruSGC/focuslist
 
 ## Overview
 
@@ -112,7 +114,9 @@ The JavaScript bundle is about 87 KB gzipped, fonts are about 67 KB, and there a
 
 ## Deployment
 
-The app is a static build (`npm run build`, output in `dist/`). It is deployed on Vercel from the `main` branch with the default Vite settings: build command `npm run build`, output directory `dist`.
+The app is a static build (`npm run build`, output in `dist/`), deployed on Vercel with the default Vite settings: build command `npm run build`, output directory `dist`. Live at https://webrushhack.vercel.app.
+
+To deploy your own copy: `npx vercel deploy --prod`.
 
 ## Credits
 

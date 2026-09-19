@@ -6,3 +6,5 @@ GATES.md
 .DS_Store
 .vercel
 lighthouse-report*.json
+
+.vercel
