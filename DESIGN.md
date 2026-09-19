@@ -178,7 +178,7 @@ A restrained print palette: warm paper and near-black ink carry the interface, v
 - **Sumi Ink** (`colors.sumi`): body text, selected segment fill, checked stamp, meter fill, toast ground, text selection background, ink bloom. Night: `colors.night-ivory`.
 - **Soft Sumi** (`colors.sumi-soft`): secondary text, labels, placeholders, inactive nav. Night: `colors.night-ivory-soft`.
 - **Ash** (`colors.ash`): Low priority seal. Night: `colors.night-ash`.
-- **Edge Grey** (`colors.edge`): control borders, scrollbar thumb. Night: `colors.night-edge`. A softer hairline (ink at 18% alpha, ivory at 20% at night) divides sheets and rings rows and the panel.
+- **Edge Grey** (`colors.edge`): control borders. Night: `colors.night-edge`. A softer hairline (ink at 18% alpha, ivory at 20% at night) divides sheets and rings rows and the panel.
 
 ### Named Rules
 **The One Vermilion Rule.** Vermilion marks High priority, the primary action, focus and the current page, and nothing else. Text selection is ink, completed rows recede to deeper paper and an ink stamp, so vermilion stays reserved.

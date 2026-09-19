@@ -138,6 +138,7 @@ To see it yourself, run `node scripts/motion-lab.mjs`. It slows the animation cl
 - Every control has a visible or accessible name; priority and completion are conveyed by text and shape, not colour alone.
 - Full keyboard use: add, complete, edit, delete and undo all work without a mouse, with a visible focus ring everywhere.
 - Touch targets are at least 44 px.
+- No visible scrollbars, so a 15 px classic scrollbar never shifts the panel out of alignment with the print. Pages still scroll with the wheel, touch and keyboard, and a test with real (non-overlay) scrollbars checks every page at six sizes.
 - Contrast is AA in both themes. axe reports no serious or critical violations on any page in light or dark.
 - `prefers-reduced-motion` and `prefers-color-scheme` are honoured.
 - Paintings are decorative: empty alt text, hidden from assistive tech, never receive input. Kanji are decorative seals with `lang="ja"`; all labels are literal English.
